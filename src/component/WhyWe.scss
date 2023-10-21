@@ -1,0 +1,186 @@
+@import  "../global.scss";
+@keyframes sideRight {
+    from {
+      transform: translateX(-25%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes sideLeft {
+    from {
+      transform: translateX(25%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+.why-we {
+    background-color: #eeeced;
+    padding-top: 75px;
+
+    h2 {
+        text-align: center;
+        font-size: 40px;
+        font-weight: 300;
+        color:hsl(0, 0%, 21%);
+    }
+
+    .whyus-content {
+        max-width: 1000px;
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        @include tablet {
+            flex-wrap: wrap;
+            .whyus-bg {
+                order: 3;
+               flex: 1;
+               text-align: center;
+            }
+        }
+
+        @include mobile {
+            justify-content: center;
+        }
+
+        .whyus-content-left {
+            .up.child{
+                &.visible {
+                    animation: sideRight 0.7s ease-in;
+                    animation-delay: 0.4s;
+                    animation-fill-mode: forwards;
+                }
+            }
+            .down.child{
+                &.visible {
+                    animation: sideRight 0.7s ease-in;
+                    animation-delay: 0.5s;
+                    animation-fill-mode: forwards;
+                }
+            }
+            .content {
+                margin: 35px;
+                h3 {
+                    text-align: right;
+                    font-size: 24px;
+                    font-weight: 300;
+                    line-height: 26px;
+                    color: #424242;
+                    text-transform: uppercase;
+                    margin-bottom: 15px;
+                    @include mobile {
+                        text-align: center;
+                    }
+                }
+                p {
+                    text-align: right;
+                    font-size: 14px;
+                    line-height: 26px;
+                    color: #424242;
+                    font-weight: 300;
+                    font-family: 'Fira Sans',sans-serif;
+                    @include mobile {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .whyus-bg {
+            position: relative;
+            height: 590px;
+            img {
+                height: 590px;
+                width: 340px;
+            }
+            .img2 {
+                transform: translateY(-102%);
+            }   
+            .img3 {
+                transform: translateY(-202%);
+            }
+        }
+
+        .whyus-content-right {
+            
+            .up.child{
+                &.visible {
+                    animation: sideLeft 0.7s ease-in;
+                    animation-delay: 0.4s;
+                    animation-fill-mode: forwards;
+                }
+            }
+            .down.child{
+                &.visible {
+                    animation: sideLeft 0.7s ease-in;
+                    animation-delay: 0.5s;
+                    animation-fill-mode: forwards;
+                }
+            }
+            .content {
+                margin: 35px;
+                h3 {
+                    text-align: left;
+                    font-size: 24px;
+                    font-weight: 300;
+                    line-height: 26px;
+                    color: #424242;
+                    text-transform: uppercase;
+                    margin-bottom: 15px;
+                    @include mobile {
+                        text-align: center;
+                    }
+                }
+                p {
+                    text-align: left;
+                    font-size: 14px;
+                    line-height: 26px;
+                    color: #424242;
+                    font-weight: 300;
+                    font-family: 'Fira Sans',sans-serif;
+                    @include mobile {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .child {
+            display: flex;
+            width: 345px;
+            align-items: center;
+            opacity: 0;
+            .icon {
+                @include tablet {
+                    display: none;
+                }
+                font-size: 150px;
+            }
+        }
+    }
+}
+
